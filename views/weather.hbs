@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather page</title>
+    <link href="/static/css/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200">
+{{> header}}
+<div class="flex justify-center">
+    <div class="bg-white flex flex-col justify-center items-center w-1/5 h-min p-5 gap-2 rounded-md shadow">
+        <h1 class="font-bold text-xl">{{cityName}}</h1>
+        <img src="http://openweathermap.org/img/wn/{{weather.weather.0.icon}}.png" alt="weather icon">
+        <p>{{weather.weather.0.description}}</p>
+        <p>Температура: {{weather.main.temp}}°C</p>
+        <p>Вологість: {{weather.main.humidity}}%</p>
+        <p>Тиск: {{weather.main.pressure}}hPa</p>
+        <a href="/"
+           class="flex justify-center items-center h-10 bg-blue-600 text-white rounded-md cursor-pointer p-2">
+            Back to home
+        </a>
+    </div>
+</div>
+</body>
+</html>

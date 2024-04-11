@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather page</title>
+    <link href="/static/css/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200">
+{{> header}}
+<div class="flex justify-center">
+    <div class="flex flex-col gap-4 justify-center">
+        <p class="text-md text-center">Select a city to view weather</p>
+        <div class="flex flex-col gap-2">
+            {{#cities}}
+                <a href="/weather/{{this}}"
+                   class="flex justify-center items-center h-10 bg-blue-600 text-white rounded-md cursor-pointer">
+                    {{this}}
+                </a>
+            {{/cities}}
+        </div>
+    </div>
+</div>
+</body>
+</html>
